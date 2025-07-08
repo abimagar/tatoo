@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Ink Studio</title>
+  <!-- Google Fonts -->
+  <link 
+    href="https://teyungstattooink.com/artists"
+    rel="stylesheet"
+  />
+  <style>
+    /* RESET & BASE */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: #111;
+      color: #eee;
+      line-height: 1.6;
+    }
+    a { color: #f04848; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; width: 100%;
+      background: rgba(17,17,17,0.9); backdrop-filter: blur(5px);
+      padding: 1rem 2rem; display: flex; justify-content: space-between; z-index: 1000;
+    }
+    nav .logo { font-family: 'Oswald', sans-serif; font-size: 1.5rem; letter-spacing: 2px; }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav li { font-weight: 600; }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      height: 100vh; display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      background: url('hero-tattoo.jpg') center/cover no-repeat;
+      text-align: center; color: #fff;
+    }
+    .hero::after {
+      content: ''; position: absolute; top:0; left:0; width:100%; height:100%;
+      background: rgba(0,0,0,0.6);
+      pointer-events: none;
+    }
+    .hero h1 {
+      position: relative; font-family: 'Oswald', sans-serif;
+      font-size: 3rem; margin-bottom: 0.5rem;
+      z-index: 1;
+    }
+    .hero p {
+      position: relative; font-size: 1.1rem; max-width: 600px; z-index:1;
+    }
+    .hero .btn {
+      position: relative; margin-top: 1.5rem; padding: 0.75rem 1.5rem;
+      background: #f04848; border: none; font-size: 1rem; font-weight: 600;
+      cursor: pointer; z-index:1;
+    }
+    .hero .btn:hover { background: #d83b3b; }
+
+    /* SECTIONS */
+    section { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+    h2 { font-family: 'Oswald', sans-serif; font-size: 2rem; margin-bottom: 1rem; text-align: center; }
+
+    /* GALLERY */
+    .gallery {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 1rem;
+    }
+    .gallery img {
+      width: 100%; aspect-ratio: 1/1; object-fit: cover;
+      border: 3px solid #222; transition: transform 0.3s, border-color 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05); border-color: #f04848;
+    }
+
+    /* ABOUT */
+    .about { display: flex; flex-direction: column; gap: 2rem; text-align: center; }
+    .about img {
+      width: 150px; height: 150px; border-radius: 50%;
+      object-fit: cover; margin: 0 auto 1rem;
+      border: 4px solid #f04848;
+    }
+
+    /* CONTACT */
+    .contact form {
+      display: grid; gap: 1rem;
+    }
+    .contact input, .contact textarea {
+      padding: 0.75rem; border: 2px solid #333; border-radius: 4px;
+      background: #222; color: #eee; font-size: 1rem;
+    }
+    .contact input:focus, .contact textarea:focus {
+      outline: none; border-color: #f04848;
+    }
+    .contact button {
+      padding: 0.75rem; border: none; background: #f04848;
+      font-size: 1rem; font-weight: 600; cursor: pointer;
+    }
+    .contact button:hover { background: #d83b3b; }
+
+    /* FOOTER */
+    footer {
+      text-align: center; padding: 2rem; font-size: 0.9rem;
+      background: #111; color: #777;
+    }
+
+    /* RESPONSIVE NAV */
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      /* You could add a hamburger menu here */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="logo">Your Ink Studio</div>
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#gallery">Portfolio</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero">
+    <h1>Your Ink Studio</h1>
+    <p>Bold. Creative. Unique body art crafted just for you.</p>
+    <button class="btn">Book Your Session</button>
+  </section>
+
+  <!-- GALLERY SECTION -->
+  <section id="gallery">
+    <h2>Portfolio</h2>
+    <div class="gallery">
+      <img src="/Users/djabi/Library/Group Containers/group.com.apple.coreservices.useractivityd/shared-pasteboard/items/5673D3CE-B07B-4E01-A44F-8583FCEE0762/IMG_1573.jpeg /Users/djabi/Library/Group Containers/group.com.apple.coreservices.useractivityd/shared-pasteboard/items/3F05C2F4-98DE-46C0-8FB6-C8E329B4DA9A/IMG_1574.jpeg /Users/djabi/Library/Group Containers/group.com.apple.coreservices.useractivityd/shared-pasteboard/items/6F2B3A93-6B8D-4ACA-A6AC-97EFEF91CA02/IMG_1575.jpeg" alt="Tattoo design 1">
+      <img src="tattoo2.jpg" alt="Tattoo design 2">
+      <img src="tattoo3.jpg" alt="Tattoo design 3">
+      <img src="tattoo4.jpg" alt="Tattoo design 4">
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about">
+    <h2>About the Artist</h2>
+    <img src="artist.jpg" alt="Artist portrait">
+    <p>Hi, I’m Alex Doe, a professional tattoo artist with 10+ years of experience. My style blends traditional and modern techniques to create personalized art that tells your story.</p>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact">
+    <h2>Get in Touch</h2>
+    <form action="#" method="post">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="What would you like?"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 Your Ink Studio &middot; Designed by You
+  </footer>
+
+</body>
+</html>
